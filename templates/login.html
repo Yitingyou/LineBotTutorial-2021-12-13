@@ -5,7 +5,14 @@
     <title>Line Login</title>
     <script>
     function Auth() {
-        //your code here
+        var URL = 'https://access.line.me/oauth2/v2.1/authorize?';
+        URL += 'response_type=code';
+        URL += '&client_id={{client_id}}';  //請換成你自己的 client_id
+        URL += '&redirect_uri={{end_point}}/line_login'; //請換成你自己的 callback url
+        URL += '&scope=profile%20openid%20email';
+        URL += '&state=123453sdfgfd';
+        //導引到LineLogin
+        window.location.href = URL;
     }
 </script>
   </head>
